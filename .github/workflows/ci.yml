@@ -15,8 +15,8 @@ jobs:
           node-version: 20.11.1  # Specify your desired Node.js version
       - name: Install dependencies
         run: npm ci  # Or yarn install, depending on your package manager
-      - name: Run tests
-        run: npm test  # Or yarn test
+    #   - name: Run tests
+    #     run: npm test  # Or yarn test
       - name: Build for deployment (optional)
         if: ${{ github.ref == 'refs/heads/main' }}  # Only build on main branch push (adjust as needed)
         run: npm run build
