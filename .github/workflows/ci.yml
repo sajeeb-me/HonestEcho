@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest  # Or a specific Node.js version
     steps:
       - uses: actions/checkout@v3  # Checkout code from your repository
-      - name: Use Node.js 16
+      - name: Use Node.js 20.11.1
         uses: actions/setup-node@v3
         with:
-          node-version: 16  # Adjust Node.js version as needed
+          node-version: 20.11.1  # Specify your desired Node.js version
       - name: Install dependencies
         run: npm ci  # Or yarn install, depending on your package manager
       - name: Run tests
@@ -32,7 +32,7 @@ jobs:
 #       - uses: actions/checkout@v3
 #       - name: Deploy to your platform (replace with your deployment script)
 #         env:
-#           DEPLOY_URL: ${{ secrets.DEPLOY_URL }}  # Replace with your deployment URL secret name
+#           DEPLOY_URL: ${{ secrets.DEPLOY_TOKEN }}  # Replace with your deployment URL secret name
 #         run: |
 #           # Replace with your deployment script (e.g., AWS CLI, Vercel, Netlify)
 #           echo "Deployment logic here (using DEPLOY_TOKEN, DEPLOY_URL secrets)"
