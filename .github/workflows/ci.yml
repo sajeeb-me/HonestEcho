@@ -1,0 +1,38 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]  # Change to your branch(es) to trigger on push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Or a specific Node.js version
+    steps:
+      - uses: actions/checkout@v3  # Checkout code from your repository
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Adjust Node.js version as needed
+      - name: Install dependencies
+        run: npm ci  # Or yarn install, depending on your package manager
+      - name: Run tests
+        run: npm test  # Or yarn test
+      - name: Build for deployment (optional)
+        if: ${{ github.ref == 'refs/heads/main' }}  # Only build on main branch push (adjust as needed)
+        run: npm run build
+
+#   deploy:  # Add this job if you want to deploy automatically
+#     runs-on: ubuntu-latest
+#     needs: build  # This job depends on the successful completion of the 'build' job
+#     environment:
+#       name: production  # You can set environment variables here
+#     secrets:
+#       DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}  # Replace with your deployment secret name
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Deploy to your platform (replace with your deployment script)
+#         env:
+#           DEPLOY_URL: ${{ secrets.DEPLOY_URL }}  # Replace with your deployment URL secret name
+#         run: |
+#           # Replace with your deployment script (e.g., AWS CLI, Vercel, Netlify)
+#           echo "Deployment logic here (using DEPLOY_TOKEN, DEPLOY_URL secrets)"
