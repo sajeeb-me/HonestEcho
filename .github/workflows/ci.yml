@@ -21,4 +21,6 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}  # Only build on main branch push (adjust as needed)
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
         run: npm run build
