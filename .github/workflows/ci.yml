@@ -23,4 +23,5 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: npm run build
