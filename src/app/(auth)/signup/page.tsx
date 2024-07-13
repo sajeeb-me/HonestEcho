@@ -112,15 +112,12 @@ const Page = () => {
                                     </FormControl>
                                     {
                                         isCheckingUsername && <FormDescription>
-                                            <Loader2 className="mr-2 animate-spin" /> Please wait
+                                            <Loader2 className="mr-1 animate-spin inline h-4 w-4" /> Checking username
                                         </FormDescription>
                                     }
                                     {
                                         usernameMessage && <FormDescription><p className={`${usernameMessage == "Username is unique" ? "text-green-500" : "text-red-500"}`}>{usernameMessage}</p></FormDescription>
                                     }
-                                    {/* <FormDescription>
-                                        This is your public display name.
-                                    </FormDescription> */}
                                     <FormMessage />
                                 </FormItem>
                             )}
