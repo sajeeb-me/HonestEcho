@@ -179,7 +179,7 @@ const Dashboard = () => {
                         />
                     ))
                 ) : (
-                    <p>No messages to display.</p>
+                    <p className="mt-4 text-gray-400">You have no messages to display!</p>
                 )}
             </div>
         </div>
