@@ -37,8 +37,6 @@ export default function SignIn() {
             password: data.password,
         });
 
-        console.log("result", result) //TODO: Delete
-
         if (result?.error) {
             if (result.error === 'CredentialsSignin') {
                 toast({
