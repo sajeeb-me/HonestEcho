@@ -13,15 +13,36 @@ import axios, { AxiosError } from 'axios'
 import { Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import React, { use } from 'react'
+import React, { use, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
+import { useCompletion } from 'ai/react';
+import suggestMessages from '@/suggestMessages.json';
 
 
+const specialChar = '||';
+
+const parseStringMessages = (messageString: string): string[] => {
+  return messageString.split(specialChar);
+}
+
+// TODO: use this code once we get valid api key
+// const initialMessageString = "What's your favorite movie?||Do you have any pets?||What's your dream job?";
 
 const MessagePage = () => {
   const params = useParams<{ username: string }>();
   const { username } = params;
+
+  // TODO: use this code once we get valid api key
+  // const {
+  //   complete,
+  //   completion,
+  //   isLoading: isSuggestLoading,
+  //   error,
+  // } = useCompletion({
+  //   api: '/api/suggest-messages',
+  //   initialCompletion: initialMessageString,
+  // });
 
   const form = useForm<z.infer<typeof messageSchema>>({
     resolver: zodResolver(messageSchema),
@@ -62,6 +83,38 @@ const MessagePage = () => {
     }
   };
 
+  //  TODO: use this code once we get valid api key
+  // const fetchSuggestedMessages = async () => {
+  //   try {
+  //     complete('');
+  //   } catch (error) {
+  //     console.error('Error fetching messages:', error);
+  //     // Handle error appropriately
+  //   }
+  // };
+
+
+  // TODO: remove this bottom code once we get valid api key
+  const [isSuggestLoading, setIsSuggestLoading] = useState(false);
+  const [initialMessageString, setInitialMessageString] = useState(suggestMessages[0].message);
+
+  const fetchSuggestedMessages = async () => {
+    setIsSuggestLoading(true);
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      const randomIndex = Math.floor(Math.random() * suggestMessages.length);
+      const randomMessage = suggestMessages[randomIndex].message;
+      setInitialMessageString(randomMessage);
+    } catch (error) {
+      console.error('Error fetching suggested messages:', error);
+    } finally {
+      setIsSuggestLoading(false);
+    }
+  };
+  // TODO: remove this up code once we get valid api key
+
+
+
   return (
     <div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
       <h1 className="text-4xl font-bold mb-6 text-center">
@@ -101,14 +154,18 @@ const MessagePage = () => {
         </form>
       </Form>
 
-      {/* <div className="space-y-4 my-8">
+      <div className="space-y-4 my-8">
         <div className="space-y-2">
           <Button
             onClick={fetchSuggestedMessages}
             className="my-4"
             disabled={isSuggestLoading}
           >
-            Suggest Messages
+            {isSuggestLoading ? (
+              <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please wait</>
+            ) : (
+              'Suggest Messages'
+            )}
           </Button>
           <p>Click on any message below to select it.</p>
         </div>
@@ -116,6 +173,8 @@ const MessagePage = () => {
           <CardHeader>
             <h3 className="text-xl font-semibold">Messages</h3>
           </CardHeader>
+          {/* 
+          TODO: use this CardContent once we get valid api key
           <CardContent className="flex flex-col space-y-4">
             {error ? (
               <p className="text-red-500">{error.message}</p>
@@ -131,9 +190,28 @@ const MessagePage = () => {
                 </Button>
               ))
             )}
+          </CardContent> 
+          */}
+
+          {/* TODO: remove this CardContent once we get valid api key*/}
+          <CardContent className="flex flex-col space-y-4">
+            {
+              parseStringMessages(initialMessageString).map((message, index) => (
+                <Button
+                  key={index}
+                  variant="outline"
+                  className="mb-2"
+                  onClick={() => handleMessageClick(message)}
+                >
+                  {message}
+                </Button>
+              ))
+            }
           </CardContent>
         </Card>
-      </div> */}
+      </div>
+
+
       <Separator className="my-6" />
       <div className="text-center">
         <div className="mb-4">Get Your Message Board</div>

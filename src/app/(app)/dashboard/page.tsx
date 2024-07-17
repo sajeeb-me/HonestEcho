@@ -107,8 +107,8 @@ const Dashboard = () => {
     }
 
     if (!session || !session.user) {
-        return <div>
-            Please login!
+        return <div className=" w-full mt-10 flex justify-center items-center">
+            <p className="text-lg ">Please login!</p>
         </div>
     }
 

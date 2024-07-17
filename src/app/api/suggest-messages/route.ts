@@ -27,6 +27,7 @@ export async function POST(req: Request) {
     } catch (error) {
         if (error instanceof OpenAI.APIError) {
             // OpenAI API error handling
+            console.error('An error occurred with the OpenAI API:', error);
             const { name, status, headers, message } = error;
             return NextResponse.json({ name, status, headers, message }, { status });
         } else {

@@ -1,0 +1,90 @@
+[
+    {
+        "messageId": 1,
+        "message": "What's your favorite movie?||Do you have any pets?||What's your dream job?"
+    },
+    {
+        "messageId": 2,
+        "message": "What's a book or movie that had a significant impact on you and why?||If you could instantly learn any skill or talent, what would it be and how would you use it?||What’s one place in the world you’ve always wanted to visit, and what draws you to it?"
+    },
+    {
+        "messageId": 3,
+        "message": "What’s a random act of kindness you’ve experienced or witnessed recently?||If you could have any superpower for a day, what would it be and what would you do with it?||What’s a memorable piece of advice you’ve received that has stuck with you?"
+    },
+    {
+        "messageId": 4,
+        "message": "What’s a project or goal you’re currently working towards, and what motivates you to pursue it?||If you could live in any fictional world for a week, where would you choose and why?||What’s a tradition or activity you enjoy that brings you a sense of joy or peace?"
+    },
+    {
+        "messageId": 5,
+        "message": "What’s a unique or interesting fact you recently learned?||If you could spend a day with any living person, who would it be and what would you do?||What’s a creative outlet you enjoy, and how did you get started with it?"
+    },
+    {
+        "messageId": 6,
+        "message": "What’s a dream you’ve had since childhood that you still think about?||If you could change one thing about the world, what would it be and why?||What’s your favorite way to unwind after a long day, and why does it work for you?"
+    },
+    {
+        "messageId": 7,
+        "message": "What’s an experience that challenged you and how did you grow from it?||If you could create a new holiday, what would it celebrate and how would people observe it?||What’s a book or article that you’ve read recently and would recommend to others?"
+    },
+    {
+        "messageId": 8,
+        "message": "What’s something you’ve always wanted to learn but haven’t yet?||If you could time travel to any era, past or future, where would you go and why?||What’s a habit or routine that has positively impacted your life?"
+    },
+    {
+        "messageId": 9,
+        "message": "What’s the best piece of advice you’ve ever received and who gave it to you?||If you could magically master any instrument, which one would you choose and why?||What’s a memorable adventure or trip you’ve been on, and what made it special?"
+    },
+    {
+        "messageId": 10,
+        "message": "What’s a favorite quote or saying that inspires you?||If you could host a dinner party with any three people (living or dead), who would you invite and why?||What’s a personal achievement that you’re particularly proud of and how did you accomplish it?"
+    },
+    {
+        "messageId": 10,
+        "message": "What’s a favorite quote or saying that inspires you?||If you could host a dinner party with any three people (living or dead), who would you invite and why?||What’s a personal achievement that you’re particularly proud of and how did you accomplish it?"
+    },
+    {
+        "messageId": 11,
+        "message": "What's the most unexpected place you've found beauty? || You win a contest to travel anywhere in the world for 24 hours. Where do you go and why? || If you could have a superpower for a day, what would it be and how would you use it?"
+    },
+    {
+        "messageId": 12,
+        "message": "What's one skill you'd love to master? || If you could create a new holiday, what would it celebrate and how would it be observed? || What's the most interesting thing you've learned recently?"
+    },
+    {
+        "messageId": 13,
+        "message": "What's the best piece of advice you've ever received? || If you could live anywhere in the world for a year, where would you choose and why? || What's your favorite way to relax and unwind?"
+    },
+    {
+        "messageId": 14,
+        "message": "What's the most beautiful place you've ever visited? || If you could have any animal as a pet, what would it be and why? || What's one thing you're grateful for today?"
+    },
+    {
+        "messageId": 15,
+        "message": "What's your favorite book or movie and why? || If you could time travel, would you go to the past or the future and why? || What's a random fact that fascinates you?"
+    },
+    {
+        "messageId": 16,
+        "message": "What's your favorite way to spend a rainy day? || If you could have dinner with any fictional character, who would it be and what would you talk about? || What's one thing you'd like to change about the world?"
+    },
+    {
+        "messageId": 17,
+        "message": "What's the most adventurous thing you've ever done? || If you could have any job in the world, what would it be and why? || What's your favorite season and why?"
+    },
+    {
+        "messageId": 18,
+        "message": "What's your favorite childhood memory? || If you could have any superpower, what would it be and how would you use it for good? || What's one thing you're looking forward to in the future?"
+    },
+    {
+        "messageId": 19,
+        "message": "What's your favorite kind of music and why? || If you could design your own dream home, what would it look like? || What's one thing you're proud of?"
+    },
+    {
+        "messageId": 20,
+        "message": "What's your favorite hobby or pastime? || If you could be any animal for a day, what would you be and why? || What's one thing that makes you laugh?"
+    },
+    {
+        "messageId": 21,
+        "message": "What's your favorite cuisine? || If you could have any job that didn't exist, what would it be and why? || What's one thing you're curious about?"
+    }
+]
