@@ -26,7 +26,7 @@ export default function Home() {
             Dive into the World of Honest Feedback
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-lg">
-            HonestEcho - Where your identity remains a secret.
+            HonestEcho - Empowering improvement through honest feedback.
           </p>
         </section>
 
