@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button';
-import { Form, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
 import { verifySchema } from '@/schemas/verifySchema';
@@ -28,13 +28,12 @@ const VerifyAccount = () => {
     // zod implementation
     const form = useForm<z.infer<typeof verifySchema>>({
         resolver: zodResolver(verifySchema),
-        // defaultValues: {
-        //     code: ''
-        // }
+        defaultValues: {
+            code: ''
+        }
     })
 
     const onSubmit = async (data: z.infer<typeof verifySchema>) => {
-
         try {
             const response = await axios.post(`/api/verify-code`, {
                 username: params.username,
@@ -67,20 +66,42 @@ const VerifyAccount = () => {
                     </h1>
                     <p className="mb-4">Enter the verification code sent to your email</p>
                 </div>
-                <InputOTP maxLength={6}>
-                    <InputOTPGroup>
-                        <InputOTPSlot index={0} />
-                        <InputOTPSlot index={1} />
-                        <InputOTPSlot index={2} />
-                    </InputOTPGroup>
-                    <InputOTPSeparator />
-                    <InputOTPGroup>
-                        <InputOTPSlot index={3} />
-                        <InputOTPSlot index={4} />
-                        <InputOTPSlot index={5} />
-                    </InputOTPGroup>
-                </InputOTP>
                 <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <FormField
+                            name="code"
+                            control={form.control}
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Verification Code</FormLabel>
+                                    <FormControl>
+                                        <InputOTP maxLength={6} {...field}>
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={0} />
+                                                <InputOTPSlot index={1} />
+                                                <InputOTPSlot index={2} />
+                                            </InputOTPGroup>
+                                            <InputOTPSeparator />
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={3} />
+                                                <InputOTPSlot index={4} />
+                                                <InputOTPSlot index={5} />
+                                            </InputOTPGroup>
+                                        </InputOTP>
+                                    </FormControl>
+                                    <FormDescription>
+                                        Enter the 6-digit verification code sent to your email
+                                    </FormDescription>
+                                </FormItem>
+                            )}
+                        />
+                        <Button type="submit">Verify</Button>
+                    </form>
+                </Form>
+
+
+                {/* old code TODO: need to remove */}
+                {/* <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                         <FormField
                             name="code"
@@ -95,7 +116,7 @@ const VerifyAccount = () => {
                         />
                         <Button type="submit">Verify</Button>
                     </form>
-                </Form>
+                </Form> */}
             </div>
         </div>
     )
