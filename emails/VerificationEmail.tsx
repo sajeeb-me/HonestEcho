@@ -58,7 +58,8 @@ export default function VerificationEmail({ username, otp }: VerificationEmailPr
                 </Row>
                 <Row>
                     <Button
-                        href={`http://localhost:3000/verify/${username}`}
+                        // href={`http://localhost:3000/verify/${username}`}
+                        href={`https://honestecho.vercel.app/verify/${username}`}
                         target='_blank'
                         rel='noopener noreferrer'
                         style={{ backgroundColor: '#1a202c', color: '#ffffff', padding: '10px 20px', borderRadius: '5px' }}
