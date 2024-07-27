@@ -4,6 +4,7 @@
 
 ## Technologies Used
 
+- Next.js
 - Next Auth
 - Zod
 - OpenAI
@@ -12,8 +13,6 @@
 - MongoDB
 - React Hook Form
 - Axios
-- Next.js
-- React.js
 
 ## Features
 

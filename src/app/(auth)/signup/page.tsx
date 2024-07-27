@@ -102,7 +102,6 @@ const SignUp = () => {
                                     <FormLabel>Username</FormLabel>
                                     <FormControl>
                                         <Input
-                                            placeholder="username"
                                             {...field}
                                             onChange={(e) => {
                                                 field.onChange(e)
@@ -129,7 +128,7 @@ const SignUp = () => {
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
                                     <FormControl>
-                                        <Input type="email" placeholder="email" {...field} />
+                                        <Input type="email" {...field} />
                                     </FormControl>
                                     {/* <FormDescription>
                                         This is your public display name.
@@ -145,7 +144,7 @@ const SignUp = () => {
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
                                     <FormControl>
-                                        <Input type="password" placeholder="password" {...field} />
+                                        <Input type="password" {...field} />
                                     </FormControl>
                                     {/* <FormDescription>
                                         This is your public display name.
