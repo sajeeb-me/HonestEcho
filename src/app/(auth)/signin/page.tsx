@@ -105,7 +105,7 @@ export default function SignIn() {
                         />
                         <Button className='w-full' type="submit" disabled={form.formState.isSubmitting}>
                             {form.formState.isSubmitting ?
-                                (<><Loader2 className="animate-spin h-5 w-5 mr-2" /> Signing In...</>) :
+                                (<><Loader2 className="animate-spin h-4 w-4 mr-2" /> Signing In...</>) :
                                 'Sign In'}
                         </Button>
                     </form>

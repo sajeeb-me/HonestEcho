@@ -15,6 +15,8 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Loader2 } from "lucide-react"
+import Image from "next/image"
+import Logo from '../../../../public/logo.png';
 
 
 const SignUp = () => {
@@ -86,9 +88,10 @@ const SignUp = () => {
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-800">
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+                <Image src={Logo} alt="HonestEcho Logo" className='size-24 mx-auto' />
                 <div className="text-center">
-                    <h1 className="text-3xl font-extrabold tracking-tight lg:text-5xl mb-6">
-                        Join HonestEcho
+                    <h1 className="text-2xl font-bold tracking-tight mb-2">
+                        Join HonestEcho Now
                     </h1>
                     <p className="mb-4">Sign up to start your honest anonymous adventure</p>
                 </div>
