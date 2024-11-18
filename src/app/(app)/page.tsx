@@ -27,7 +27,7 @@ export default function Home() {
           <div>
             <section className="mb-5 md:mb-8">
               <h1 className="text-3xl md:text-5xl font-bold">
-                Dive into the World of Honest Feedback
+                Explore the Realm of  Honest Feedback
               </h1>
               <p className="mt-3 md:mt-4">
                 HonestEcho - Empowering improvement through honest feedback.
