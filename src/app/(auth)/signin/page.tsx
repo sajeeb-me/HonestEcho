@@ -17,6 +17,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
 import { signInSchema } from '@/schemas/signInSchema';
+import Logo from '../../../../public/logo.png';
+import Image from 'next/image';
+import { Loader2 } from 'lucide-react';
 
 export default function SignIn() {
     const router = useRouter();
@@ -36,6 +39,14 @@ export default function SignIn() {
             identifier: data.identifier,
             password: data.password,
         });
+
+        if (result?.status === 401) {
+            toast({
+                title: 'Login Failed',
+                description: result.error,
+                variant: 'destructive',
+            });
+        }
 
         if (result?.error) {
             if (result.error === 'CredentialsSignin') {
@@ -61,8 +72,9 @@ export default function SignIn() {
     return (
         <div className="flex justify-center items-center min-h-screen bg-gray-800">
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+                <Image src={Logo} alt="HonestEcho Logo" className='size-24 mx-auto' />
                 <div className="text-center">
-                    <h1 className="text-3xl font-extrabold tracking-tight lg:text-5xl mb-6">
+                    <h1 className="text-2xl font-bold tracking-tight mb-2">
                         Welcome Back to HonestEcho
                     </h1>
                     <p className="mb-4">Sign in to continue your honest secret conversations</p>
@@ -91,7 +103,11 @@ export default function SignIn() {
                                 </FormItem>
                             )}
                         />
-                        <Button className='w-full' type="submit">Sign In</Button>
+                        <Button className='w-full' type="submit" disabled={form.formState.isSubmitting}>
+                            {form.formState.isSubmitting ?
+                                (<><Loader2 className="animate-spin h-5 w-5 mr-2" /> Signing In...</>) :
+                                'Sign In'}
+                        </Button>
                     </form>
                 </Form>
                 <div className="text-center mt-4">
